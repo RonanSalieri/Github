@@ -4,6 +4,7 @@ MONITEUR DE FLUX VIDEO
 Démo ici : http://soft.rf.gd/monitor/index.php
 
 I - INTRODUCTION
+----------------
 Cet utilitaire permet de contrôler les flux vidéo provenant du/des providers lors d'une production.
 Il affiche jusqu'à 4 flux vidéo qu'il suffit de renseigner via le menu Edition.
 Le lecteur vidéo utilisé est celui fourni par le fournisseur de flux quand celui-ci le propose.
@@ -19,6 +20,7 @@ La partie à copier/coller est :
 https://www.youtube.com/embed/MsN0_WNXvh8
 
 III - RECUPERATION DES LIENS
+----------------------------
 Ci-dessous, quelques exemples pour récupérer le lien chez certain fournisseurs.
 
 YOUTUBE
@@ -31,14 +33,17 @@ VIMEO
 [iframe src="https://player.vimeo.com/video/684542460?h=782c09adc7&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen>[/iframe]
 
 IV - INSTALLATION
+-----------------
 Ce script est sous license libre.
 Ce script doit être installé sur un serveur Internet utilisant les technologies APACHE, PHP MYSQL et PHPMYADMIN pour administrer la base de données.
 Les sources BOOTSTRAP sont fournies avec le script.
 
 ETAPE 1
+-------
 Copier le contenu du dossier dans un répertoire accessible sur votre serveur web.
 
 ETAPE 2
+-------
 Créer une base de données MYSQL ou utiliser une déjà existante et rajouter deux tables : services et stream :
 CREATE TABLE services (
   id int(11) NOT NULL,
@@ -97,6 +102,7 @@ La table "services" peut être modifiée en fonction de choix personnel.
 La table "stream" contient déjà des liens d'exemples qui peuvent êtres obsolètes le jour de la mise en place du script sur un nouveau serveur.
 
 ETAPE 3
+-------
 Modifier le fichier "connect.php" qui se trouve dans le répertoire du script.
 Entrer les informations liées au serveur Internet utilisé :
 $bdd = new PDO('mysql:host=localhost;port=3306;dbname=nom_de_la_base_de_donnee;charset=utf8', 'login', 'motdepasse');
@@ -107,8 +113,10 @@ DBNAME : doit comporter le nom de la base de données utilisée.
 A la place de LOGIN et MOTDEPASSE, entrer les informations d'accès à la base de données fournies par le fournisseur de service.
 
 ETAPE 4
+-------
 Dans un navigateur, écrire l'adresse correspondante à votre serveur et le dossier contenant le script. Par exemple, https://monsite.com/moniteur/".
 
 V - CONCLUSION
+--------------
 Ce script est fonctionnel avec les navigateur Google Chrome, Microsoft Edge, Firefox, Brave, Opera sur PC avec une résolution de 1920 x 1080 pixels.
 Le script n'est pas compatible avec les mobiles et tablettes.
